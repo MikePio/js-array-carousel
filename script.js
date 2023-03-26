@@ -23,24 +23,38 @@ const buttonUp = document.querySelector('.fa-chevron-up');
 const buttonDown = document.querySelector('.fa-chevron-down');
 let containerImages = document.getElementById('container-images');
 
-console.log(images);
+let containerCircles = document.getElementById('circles-collection');
 
+const circleClass = document.getElementsByClassName('circle');
+
+console.log('images', images);
+console.log('images.length', images.length); //in base al numero generato (in questo caso 5) si stabilisce il numero dell'ultimo elemento nell'array (in questo caso 4) per poi richiamarlo
+
+// VALORE DI DEFAULT
 containerImages.innerHTML =  `<img src="${images[0]}" alt="img">`;
 let c = 0;
 
 buttonUp.addEventListener('click', function(){
-  // * soluzione 1 senza loop
+  // * soluzione 1 senza loop e quando si è a conoscenza degli elementi contenuti negli array
   if (c > 0){
     c = c - 1;
     containerImages.innerHTML =  `<img src="${images[c]}" alt="img">`;
     console.log(c);
+
+    // * genera e rimuove la classe active ai pallini bianchi
+    circleClass[c + 1].classList.remove('active');
+    circleClass[c].classList.add('active');
   }  
   else if(c = -1){
     c = 4;
     containerImages.innerHTML =  `<img src="${images[c]}" alt="img">`;
     console.log(c);
+
+    // * genera e rimuove la classe active ai pallini bianchi
+    circleClass[c = 0].classList.remove('active');
+    circleClass[c = 4].classList.add('active');
   }
-  // * OPPURE AL POSTO DI  else if(c = -1){
+  // * OPPURE solo else AL POSTO DI  else if(c = -1){
   // else{
   //   c = 4;
   //   containerImages.innerHTML =  `<img src="${images[c]}" alt="img">`;
@@ -50,22 +64,41 @@ buttonUp.addEventListener('click', function(){
 });
 
 buttonDown.addEventListener('click', function(){
-  // * soluzione 1 senza loop
+  // * soluzione 1 senza loop e quando si è a conoscenza degli elementi contenuti negli array
   if (c < 4){
     c = c + 1;
     containerImages.innerHTML =  `<img src="${images[c]}" alt="img">`;
     console.log(c);
+
+    // * genera e rimuove la classe active ai pallini bianchi
+    circleClass[c - 1].classList.remove('active');
+    circleClass[c].classList.add('active');
   }  
   else if(c = 4){
     c = 0;
     containerImages.innerHTML =  `<img src="${images[c]}" alt="img">`;
     console.log(c);
+    
+    // * genera e rimuove la classe active ai pallini bianchi
+    circleClass[c = 4].classList.remove('active');
+    circleClass[c = 0].classList.add('active');
   }
 
 });
 
+// pallini bianchi
+for(let i = 0; i < images.length; i++){
+  // for(let i = 0; i = images.length; i++){ //loop infinito
 
-
+  // * genera i pallini
+  containerCircles.innerHTML +=  `<div class="circle ${images[i]} ${[i]}"></div>`;
+  // stessa cosa
+  // containerCircles.innerHTML +=  `<div class="circle ${images[c]} ${[c]}"></div>`;
+  
+  // * genera la classe active ai pallini bianchi
+  circleClass[c].classList.add('active');
+  
+}
 
 
 

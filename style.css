@@ -22,7 +22,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 .container{
@@ -55,7 +55,7 @@
   object-fit: cover;
   border-radius: 30px;
   box-shadow: 0px 20px 30px rgba(30, 30, 30);
-  
+
 }
 
 .slider .chevron-btn{
@@ -90,7 +90,7 @@
   bottom: 10px;
 }
 
-.slider .circles-collection{
+.slider #circles-collection{
   position: absolute;
 
   /* in verticale */
@@ -103,24 +103,27 @@
   /* width: 100%;
   bottom: 20px;
   text-align: center; */
+
 }
 
-.circles-collection .circle{
+#circles-collection .circle{
   /* in verticale */
   margin-bottom: 10px;
-  
+
   /* in orizzontale */
   /* display: inline-block; */
   /* margin: 0 10px; */
 
+  /* position: absolute; */
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
-.circles-collection .circle.active{
+#circles-collection .circle.active{
   background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 0, 0); */
 }
 
 
