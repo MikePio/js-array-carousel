@@ -32,13 +32,13 @@ console.log('images.length', images.length); //in base al numero generato (in qu
 console.log('(images.length - 1)', (images.length - 1)); //generato numero dell'ultimo elemento nell'array (in questo caso 4) per poi richiamarlo
 
 
-// ! soluzione 1 senza loop e quando si è a conoscenza degli elementi contenuti negli array
+// ! soluzione 1 senza loop 
 // VALORE DI DEFAULT
 containerImages.innerHTML =  `<img src="${images[0]}" alt="img">`;
 let c = 0;
 
 buttonUp.addEventListener('click', function(){
-  // * soluzione 1 senza loop e quando si è a conoscenza degli elementi contenuti negli array
+  // * soluzione 1 senza loop 
   if (c > 0){
     c = c - 1;
     containerImages.innerHTML =  `<img src="${images[c]}" alt="img">`;
@@ -74,7 +74,7 @@ buttonUp.addEventListener('click', function(){
 });
 
 buttonDown.addEventListener('click', function(){
-  // * soluzione 1 senza loop e quando si è a conoscenza degli elementi contenuti negli array
+  // * soluzione 1 senza loop 
   if (c < (images.length - 1)){
     // oppure in questo caso
     // if (c < 4){
